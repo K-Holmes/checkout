@@ -7,23 +7,25 @@ import Grid from '@mui/material/Grid';
 
 const products = [
   {
-    name: 'Product 1',
-    desc: 'Size: S',
+    name: 'Ripped Boyfriend Fit Flannel Jacket',
+    desc: 'Size: LG',
     price: '$9.99',
   },
   {
-    name: 'Product 2',
-    desc: 'Size: M',
+    name: 'Unisex Graphic Tee',
+    desc: 'Size: MD',
     price: '$3.45',
   },
   {
-    name: 'Product 3',
+    name: 'Women\'s Suspender Skirt',
     desc: 'Size: 0',
     price: '$6.51',
+    color: 'Red',
+    quantity: '1',
   },
   {
     name: 'Poison Apple Mug',
-    desc: 'Size: NA',
+    desc: 'Size: N/A',
     price: '$14.11',
   },
   { name: 'Shipping', desc: '', price: 'Free' },
@@ -40,8 +42,11 @@ const payments = [
 export default function Review() {
   return (
     <React.Fragment>
+      <Typography variant="h5" gutterBottom>
+        Order Summary
+      </Typography>
       <Typography variant="h6" gutterBottom>
-        Order summary
+        Shopping Bag (4 items)
       </Typography>
       <List disablePadding>
         {products.map((product) => (

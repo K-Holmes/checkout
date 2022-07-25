@@ -4,8 +4,247 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import MenuItem from '@mui/material/MenuItem';
+
+const countries = [
+  {
+    value: 'US',
+    label: 'United States',
+  },
+  {
+    value: 'CA',
+    label: 'Canada',
+  },
+  {
+    value: 'MX',
+    label: 'Mexico',
+  },
+  {
+    value: 'JP',
+    label: 'Japan',
+  },
+];
+
+const states = [
+  {
+    value: 'NA',
+    label: 'OUTSIDE US',
+  },
+  {
+    value: 'AL',
+    label: 'Alabama',
+  },
+  {
+    value: 'AK',
+    label: 'Alaska',
+  },
+  {
+    value: 'AZ',
+    label: 'Arizona',
+  },
+  {
+    value: 'AR',
+    label: 'Arkansas',
+  },
+  {
+    value: 'CA',
+    label: 'California',
+  },
+  {
+    value: 'CO',
+    label: 'Colorado',
+  },
+  {
+    value: 'CT',
+    label: 'Conneticut',
+  },
+  {
+    value: 'DE',
+    label: 'Delaware',
+  },
+  {
+    value: 'FL',
+    label: 'Florida',
+  },
+  {
+    value: 'GA',
+    label: 'Georgia',
+  },
+  {
+    value: 'HI',
+    label: 'Hawaii',
+  },
+  {
+    value: 'ID',
+    label: 'Idaho',
+  },
+  {
+    value: 'IL',
+    label: 'Illinois',
+  },
+  {
+    value: 'IN',
+    label: 'Indiana',
+  },
+  {
+    value: 'IA',
+    label: 'Iowa',
+  },
+  {
+    value: 'KS',
+    label: 'Kansas',
+  },
+  {
+    value: 'KY',
+    label: 'Kentucky',
+  },
+  {
+    value: 'LA',
+    label: 'Louisiana',
+  },
+  {
+    value: 'ME',
+    label: 'Maine',
+  },
+  {
+    value: 'MD',
+    label: 'Maryland',
+  },
+  {
+    value: 'MA',
+    label: 'Massachusetts',
+  },
+  {
+    value: 'MI',
+    label: 'Michigan',
+  },
+  {
+    value: 'MN',
+    label: 'Minnesota',
+  },
+  {
+    value: 'MS',
+    label: 'Mississippi',
+  },
+  {
+    value: 'MO',
+    label: 'Missouri',
+  },
+  {
+    value: 'MT',
+    label: 'Montana',
+  },
+  {
+    value: 'NE',
+    label: 'Nebraska',
+  },
+  {
+    value: 'NV',
+    label: 'Nevada',
+  },
+  {
+    value: 'NH',
+    label: 'New Hampshire',
+  },
+  {
+    value: 'NJ',
+    label: 'New Jersey',
+  },
+  {
+    value: 'NM',
+    label: 'New Mexico',
+  },
+  {
+    value: 'NY',
+    label: 'New York',
+  },
+  {
+    value: 'NC',
+    label: 'North Carolina',
+  },
+  {
+    value: 'ND',
+    label: 'North Dakota',
+  },
+  {
+    value: 'OH',
+    label: 'Ohio',
+  },
+  {
+    value: 'OK',
+    label: 'Oklahoma',
+  },
+  {
+    value: 'OR',
+    label: 'Oregon',
+  },
+  {
+    value: 'PA',
+    label: 'Pennsylvania',
+  },
+  {
+    value: 'RI',
+    label: 'Rhode Island',
+  },
+  {
+    value: 'SC',
+    label: 'South Carolina',
+  },
+  {
+    value: 'SD',
+    label: 'South Dakota',
+  },
+  {
+    value: 'TN',
+    label: 'Tennessee',
+  },
+  {
+    value: 'TX',
+    label: 'Texas',
+  },
+  {
+    value: 'UT',
+    label: 'Utah',
+  },
+  {
+    value: 'VT',
+    label: 'Vermont',
+  },
+  {
+    value: 'VA',
+    label: 'Virginia',
+  },
+  {
+    value: 'WA',
+    label: 'Washington',
+  },
+  {
+    value: 'WV',
+    label: 'West Virginia',
+  },
+  {
+    value: 'WI',
+    label: 'Wisconsin',
+  },
+  {
+    value: 'WY',
+    label: 'Wyoming',
+  },
+];
 
 export default function AddressForm() {
+  const [country, setCountry] = React.useState('US');
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCountry(event.target.value);
+  };
+
+  const [state, setState] = React.useState('NA');
+
+  const handleChanges = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setState(event.target.value);
+  };
+
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -55,6 +294,38 @@ export default function AddressForm() {
             variant="standard"
           />
         </Grid>
+        <Grid item xs = {12} sm = {6}>
+        <TextField
+          id="outlined-select-country"
+          select
+          label="Country"
+          value={country}
+          onChange={handleChange}
+          fullWidth
+        >
+          {countries.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+        </TextField>
+        </Grid>
+        <Grid item xs = {12} sm = {6}>
+        <TextField
+          id="outlined-select-state"
+          select
+          label="State"
+          value={state}
+          onChange={handleChanges}
+          fullWidth
+        >
+          {states.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+        </TextField>
+        </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
             required
@@ -68,32 +339,12 @@ export default function AddressForm() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
-            id="state"
-            name="state"
-            label="State/Province/Region"
-            fullWidth
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
             required
             id="zip"
             name="zip"
             label="Zip / Postal code"
             fullWidth
             autoComplete="shipping postal-code"
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="country"
-            name="country"
-            label="Country"
-            fullWidth
-            autoComplete="shipping country"
             variant="standard"
           />
         </Grid>

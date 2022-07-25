@@ -69,10 +69,11 @@ export default function Checkout() {
           borderBottom: (t) => `1px solid ${t.palette.divider}`,
         }}
       >
-        <Toolbar>
-          <Typography variant="h6" color="inherit" noWrap>
+        <Toolbar className = "headerBar">
+          {/* <Typography variant="h6" color="inherit" noWrap>
             Hot Topic 
-          </Typography>
+          </Typography> */}
+          <img className = 'logoLinked'alt = "logo" src = 'https://www.hottopic.com/on/demandware.static/Sites-hottopic-Site/-/default/v1658720721704/images/hottopic_logo_white.svg'/>
         </Toolbar>
       </AppBar>
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
