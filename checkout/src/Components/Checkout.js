@@ -15,16 +15,20 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm';
 import Review from './Review';
+//import {makeStyles} from "@material-ui/core";
+
+
 
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
+      By continuing to use this site, you agree to our {' '}
+      <Link target = "_blank" color="inherit" href="https://www.hottopic.com/customer-service/hot-topic-policies/privacy-policy/">
+      Privacy Policy
+      </Link> <br />
       {'Copyright © '}
-      <Link color="inherit" href="https://www.hottopic.com">
-        HotTopic
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
+        2001-2022 Hot Topic Inc. All Rights Reserved. <br />
+        If you are using a screen reader and are having problems using this website, please call 1.800.892.8674 for assistance.
     </Typography>
   );
 }
@@ -47,6 +51,9 @@ function getStepContent(step) {
 const theme = createTheme();
 
 export default function Checkout() {
+
+  
+
   const [activeStep, setActiveStep] = React.useState(0);
 
   const handleNext = () => {
@@ -70,7 +77,7 @@ export default function Checkout() {
         }}
       >
         <Toolbar className = "headerBar">
-          <img className = 'logoLinked' alt = "logo" src = 'https://www.hottopic.com/on/demandware.static/Sites-hottopic-Site/-/default/v1658720721704/images/hottopic_logo_white.svg'/>
+          <img className = "logoLinked" alt = "logo" src = 'https://www.hottopic.com/on/demandware.static/Sites-hottopic-Site/-/default/v1658720721704/images/hottopic_logo_white.svg'/>
         </Toolbar>
       </AppBar>
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
@@ -96,6 +103,7 @@ export default function Checkout() {
                   confirmation, and will send you an update when your order has
                   shipped.
                 </Typography>
+                <Button href="https://www.hottopic.com" target="_blank">Return to Storefront</Button>
               </React.Fragment>
             ) : (
               <React.Fragment>
@@ -109,6 +117,7 @@ export default function Checkout() {
 
                   <Button
                     variant="contained"
+                    color ="error"
                     onClick={handleNext}
                     sx={{ mt: 3, ml: 1 }}
                   >

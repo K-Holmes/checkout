@@ -47,3 +47,12 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.imgPadding {
+  padding-right: 15px;
+}
+
+.copyright {
+  background-color: black;
+  padding-bottom: 25px;
+}

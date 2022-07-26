@@ -4,27 +4,35 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Grid from '@mui/material/Grid';
+import shirt from './tshirt.jpeg';
+import mug from './mug.jpeg';
+import cloak from './cloak.jpeg';
+import skirt from './skirt.jpeg';
 
 const products = [
   {
     name: 'Black Brocade Mens Coat',
     desc: 'Color: BLACK, Size: 2XL , Qty: 1',
     price: '$80.90',
+    logo: cloak,
   },
   {
     name: 'Tasty Peach Tofusagi Boyfriend Fit Girls T-Shirt',
     desc: 'Color: BLACK, Size: MD , Qty: 1',
     price: '$24.90',
+    logo: shirt,
   },
   {
     name: 'Black Suspender Circle Skirt',
     desc: 'Color: Black, Size: 0 , Qty: 1',
     price: '$29.90',
+    logo: skirt,
   },
   {
     name: 'Poison Apple Mug',
     desc: 'Qty: 1',
     price: '$16.90',
+    logo: mug,
   },
   // { name: 'Shipping', desc: '', price: 'Free' },
 ];
@@ -49,6 +57,9 @@ export default function Review() {
       <List disablePadding>
         {products.map((product) => (
           <ListItem key={product.name} sx={{ py: 1, px: 0 }}>
+            <Grid>
+              <img className="imgPadding"src={product.logo} alt ='' width="75" height="75"/>
+            </Grid>
             <ListItemText primary={product.name} secondary={product.desc}/>
             <Typography variant="body2">{product.price}</Typography>
           </ListItem>
