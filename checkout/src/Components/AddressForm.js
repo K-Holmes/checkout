@@ -248,7 +248,7 @@ export default function AddressForm() {
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
-        Shipping address
+        Shipping Address
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
@@ -259,7 +259,7 @@ export default function AddressForm() {
             label="First name"
             fullWidth
             autoComplete="given-name"
-            variant="standard"
+            variant="outlined"
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -270,7 +270,7 @@ export default function AddressForm() {
             label="Last name"
             fullWidth
             autoComplete="family-name"
-            variant="standard"
+            variant="outlined"
           />
         </Grid>
         <Grid item xs={12}>
@@ -278,26 +278,27 @@ export default function AddressForm() {
             required
             id="address1"
             name="address1"
-            label="Address line 1"
+            label="Address 1"
             fullWidth
             autoComplete="shipping address-line1"
-            variant="standard"
+            variant="outlined"
           />
         </Grid>
         <Grid item xs={12}>
           <TextField
             id="address2"
             name="address2"
-            label="Address line 2"
+            label="Address 2"
             fullWidth
             autoComplete="shipping address-line2"
-            variant="standard"
+            variant="outlined"
           />
         </Grid>
         <Grid item xs = {12} sm = {6}>
         <TextField
           id="outlined-select-country"
           select
+          required
           label="Country"
           value={country}
           onChange={handleChange}
@@ -314,6 +315,7 @@ export default function AddressForm() {
         <TextField
           id="outlined-select-state"
           select
+          required
           label="State"
           value={state}
           onChange={handleChanges}
@@ -334,7 +336,7 @@ export default function AddressForm() {
             label="City"
             fullWidth
             autoComplete="shipping address-level2"
-            variant="standard"
+            variant="outlined"
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -342,10 +344,10 @@ export default function AddressForm() {
             required
             id="zip"
             name="zip"
-            label="Zip / Postal code"
+            label="ZIP Code"
             fullWidth
             autoComplete="shipping postal-code"
-            variant="standard"
+            variant="outlined"
           />
         </Grid>
         <Grid item xs={12}>

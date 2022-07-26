@@ -70,15 +70,12 @@ export default function Checkout() {
         }}
       >
         <Toolbar className = "headerBar">
-          {/* <Typography variant="h6" color="inherit" noWrap>
-            Hot Topic 
-          </Typography> */}
-          <img className = 'logoLinked'alt = "logo" src = 'https://www.hottopic.com/on/demandware.static/Sites-hottopic-Site/-/default/v1658720721704/images/hottopic_logo_white.svg'/>
+          <img className = 'logoLinked' alt = "logo" src = 'https://www.hottopic.com/on/demandware.static/Sites-hottopic-Site/-/default/v1658720721704/images/hottopic_logo_white.svg'/>
         </Toolbar>
       </AppBar>
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
         <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
-          <Typography component="h1" variant="h4" align="center">
+          <Typography componentc="h1" variant="h4" align="center">
             Checkout
           </Typography>
           <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
@@ -115,7 +112,9 @@ export default function Checkout() {
                     onClick={handleNext}
                     sx={{ mt: 3, ml: 1 }}
                   >
-                    {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
+                    {activeStep === steps.length - 3 ? 'continue to payment' : ''}
+                    {activeStep === steps.length - 2 ? 'review details' : ''}
+                    {activeStep === steps.length - 1 ? 'confirm order' : ''}
                   </Button>
                 </Box>
               </React.Fragment>

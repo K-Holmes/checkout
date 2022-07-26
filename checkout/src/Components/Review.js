@@ -7,35 +7,33 @@ import Grid from '@mui/material/Grid';
 
 const products = [
   {
-    name: 'Ripped Boyfriend Fit Flannel Jacket',
-    desc: 'Size: LG',
-    price: '$9.99',
+    name: 'Black Brocade Mens Coat',
+    desc: 'Color: BLACK, Size: 2XL , Qty: 1',
+    price: '$80.90',
   },
   {
-    name: 'Unisex Graphic Tee',
-    desc: 'Size: MD',
-    price: '$3.45',
+    name: 'Tasty Peach Tofusagi Boyfriend Fit Girls T-Shirt',
+    desc: 'Color: BLACK, Size: MD , Qty: 1',
+    price: '$24.90',
   },
   {
-    name: 'Women\'s Suspender Skirt',
-    desc: 'Size: 0',
-    price: '$6.51',
-    color: 'Red',
-    quantity: '1',
+    name: 'Black Suspender Circle Skirt',
+    desc: 'Color: Black, Size: 0 , Qty: 1',
+    price: '$29.90',
   },
   {
     name: 'Poison Apple Mug',
-    desc: 'Size: N/A',
-    price: '$14.11',
+    desc: 'Qty: 1',
+    price: '$16.90',
   },
-  { name: 'Shipping', desc: '', price: 'Free' },
+  // { name: 'Shipping', desc: '', price: 'Free' },
 ];
 
 const addresses = ['1 MUI Drive', 'Reactville', 'Anytown', '99999', 'USA'];
 const payments = [
   { name: 'Card Type', detail: 'Visa' },
   { name: 'Card Holder', detail: 'Mr John Smith' },
-  { name: 'Card Number', detail: 'xxxx-xxxx-xxxx-1234' },
+  { name: 'Card Number', detail: '0000-0000-0000-0000' },
   { name: 'Expir. Date', detail: '04/24' },
 ];
 
@@ -51,17 +49,50 @@ export default function Review() {
       <List disablePadding>
         {products.map((product) => (
           <ListItem key={product.name} sx={{ py: 1, px: 0 }}>
-            <ListItemText primary={product.name} secondary={product.desc} />
+            <ListItemText primary={product.name} secondary={product.desc}/>
             <Typography variant="body2">{product.price}</Typography>
           </ListItem>
         ))}
 
         <ListItem sx={{ py: 1, px: 0 }}>
-          <ListItemText primary="Total" />
+          <ListItemText primary="Subtotal" />
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            $34.06
+            $132.28
           </Typography>
         </ListItem>
+
+        <ListItem sx={{ py: 1, px: 0 }}>
+        <ListItemText primary="Shipping" />
+        <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
+            $0.00
+          </Typography>
+        </ListItem>
+
+        <ListItem sx={{ py: 1, px: 0 }}>
+        <ListItemText primary="Shipping Surcharge" />
+        <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
+            $1.99
+          </Typography>
+        </ListItem>
+
+        <ListItem sx={{ py: 1, px: 0 }}>
+        <ListItemText primary="Tax" />
+        <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
+            $0.00
+          </Typography>
+        </ListItem>
+
+        <ListItem sx={{ py: 1, px: 0 }}>
+        <ListItemText primary="Total" />
+        <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
+            $134.27
+          </Typography>
+        </ListItem>
+
+        <ListItem sx={{ py: 1, px: 0 }}>
+        <ListItemText secondary="Final shipping costs & tax will be calculated at checkout." />
+        </ListItem>
+
       </List>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
