@@ -258,6 +258,7 @@ export default function AddressForm() {
             name="firstName"
             label="First name"
             fullWidth
+            color="warning" focused
             autoComplete="given-name"
             variant="outlined"
           />

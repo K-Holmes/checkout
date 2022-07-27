@@ -33,6 +33,7 @@ function Copyright() {
   );
 }
 
+
 const steps = ['Shipping address', 'Payment details', 'Review your order'];
 
 function getStepContent(step) {
